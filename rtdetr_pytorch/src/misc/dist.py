@@ -104,6 +104,7 @@ def warp_model(model, find_unused_parameters=False, sync_bn=False,):
 def warp_loader(loader, shuffle=False):        
     if is_dist_available_and_initialized():
         sampler = DistributedSampler(loader.dataset, shuffle=shuffle)
+
         loader = DataLoader(loader.dataset, 
                             loader.batch_size, 
                             sampler=sampler, 
@@ -112,6 +113,7 @@ def warp_loader(loader, shuffle=False):
                             pin_memory=loader.pin_memory,
                             num_workers=loader.num_workers, )
     return loader
+
 
 
 

@@ -10,7 +10,7 @@ from torch.optim.lr_scheduler import LRScheduler
 from torch.cuda.amp.grad_scaler import GradScaler
 
 from typing import Callable, List, Dict
-
+from src.misc.customloader import PotholeDataset
 
 __all__ = ['BaseConfig', ]
 
@@ -123,6 +123,7 @@ class BaseConfig(object):
 
     @property
     def train_dataloader(self):
+        self.train_dataset = PotholeDataset(root = '/content/dataset/YOLOv8/groundOnly_pothole', dataset_type='train')
         if self._train_dataloader is None and self.train_dataset is not None:
             loader = DataLoader(self.train_dataset, 
                                 batch_size=self.train_batch_size, 
@@ -140,6 +141,7 @@ class BaseConfig(object):
 
     @property
     def val_dataloader(self):
+        self.val_dataset = PotholeDataset(root = '/content/dataset/YOLOv8/groundOnly_pothole', dataset_type='val')
         if self._val_dataloader is None and self.val_dataset is not None:
             loader = DataLoader(self.val_dataset, 
                                 batch_size=self.val_batch_size, 
