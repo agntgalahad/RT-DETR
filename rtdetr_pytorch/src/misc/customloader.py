@@ -1,10 +1,13 @@
-from ultralytics import YOLO
 from torch.utils.data import DataLoader
 from torchvision import transforms
 from torchvision.datasets import VisionDataset
 import os
 from PIL import Image
+from src.core import register
 
+__all__ = ['CocoDetection']
+
+@register
 def PotholeDataset(VisionDataset):
     def __init__(self, root, dataset_type, transform=None, target_transform=None):
         super(PotholeDataset, self).__init__(root, transform=transform, target_transform=target_transform)

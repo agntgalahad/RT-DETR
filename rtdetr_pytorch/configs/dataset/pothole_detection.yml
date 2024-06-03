@@ -1,12 +1,12 @@
 task: detection
 
 num_classes: 1
-remap_mscoco_category: True
+remap_mscoco_category: False
 
 train_dataloader: 
   type: DataLoader
   dataset: 
-    type: VisionDataset
+    type: PotholeDataset
     img_folder: /content/dataset/YOLOv8/groundOnly_pothole/images/train
     ann_folder: /content/dataset/YOLOv8/groundOnly_pothole/labels/train
     transforms:
@@ -21,7 +21,7 @@ train_dataloader:
 val_dataloader:
   type: DataLoader
   dataset: 
-    type: VisionDataset
+    type: PotholeDataset
     img_folder: /content/dataset/YOLOv8/groundOnly_pothole/images/val
     ann_folder: /content/dataset/YOLOv8/groundOnly_pothole/labels/val
     transforms:
