@@ -82,7 +82,8 @@ def main(args, ):
 
 
     # import onnxruntime as ort 
-    # from PIL import Image, ImageDraw, ImageFont
+    # from PIL import Image
+Image.MAX_IMAGE_PIXELS = None, ImageDraw, ImageFont
     # from torchvision.transforms import ToTensor
     # from src.data.coco.coco_dataset import mscoco_category2name, mscoco_category2label, mscoco_label2category
 

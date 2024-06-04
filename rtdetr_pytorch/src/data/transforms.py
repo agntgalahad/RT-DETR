@@ -12,7 +12,8 @@ from torchvision import datapoints
 import torchvision.transforms.v2 as T
 import torchvision.transforms.v2.functional as F
 
-from PIL import Image 
+from PIL import Image
+Image.MAX_IMAGE_PIXELS = None 
 from typing import Any, Dict, List, Optional
 
 from src.core import register, GLOBAL_CONFIG

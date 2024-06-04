@@ -26,6 +26,7 @@ import numpy as np
 import typing
 from PIL import Image, ImageOps, ImageFile
 
+Image.MAX_IMAGE_PIXELS = None
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 import paddle

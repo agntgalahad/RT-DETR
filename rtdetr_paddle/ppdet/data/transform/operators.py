@@ -36,6 +36,7 @@ import copy
 import logging
 import cv2
 from PIL import Image, ImageDraw
+Image.MAX_IMAGE_PIXELS = None
 import pickle
 import threading
 MUTEX = threading.Lock()

@@ -20,6 +20,7 @@ from __future__ import unicode_literals
 import numpy as np
 import PIL
 from PIL import Image, ImageDraw
+Image.MAX_IMAGE_PIXELS = None
 import cv2
 import math
 

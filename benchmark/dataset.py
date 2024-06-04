@@ -4,6 +4,7 @@
 import os
 import glob
 from PIL import Image
+Image.MAX_IMAGE_PIXELS = None
 
 import torch
 import torch.utils.data as data

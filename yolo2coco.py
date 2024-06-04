@@ -1,6 +1,7 @@
 import os
 import json
 from PIL import Image
+Image.MAX_IMAGE_PIXELS = None
 
 # Paths to your dataset
 yolo_images_path = "/content/dataset/YOLOv8/groundOnly_pothole/images"

@@ -5,6 +5,7 @@ import time
 import contextlib
 import numpy as np
 from PIL import Image
+Image.MAX_IMAGE_PIXELS = None
 from collections import OrderedDict
 
 import onnx
