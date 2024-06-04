@@ -12,7 +12,7 @@ from src.data import get_coco_api_from_dataset
 
 from .solver import BaseSolver
 from .det_engine import train_one_epoch, evaluate
-
+import shutil
 
 class DetSolver(BaseSolver):
     
@@ -80,9 +80,14 @@ class DetSolver(BaseSolver):
                         filenames = ['latest.pth']
                         if epoch % 50 == 0:
                             filenames.append(f'{epoch:03}.pth')
+
                         for name in filenames:
                             torch.save(coco_evaluator.coco_eval["bbox"].eval,
                                     self.output_dir / "eval" / name)
+                            if self.output_dir:
+                                latest_checkpoint = max(self.output_dir.glob('checkpoint*.pth'), key=os.path.getctime)
+                                new_dir = ''
+                                shutil.copy(latest_checkpoint, new_dir)
 
         total_time = time.time() - start_time
         total_time_str = str(datetime.timedelta(seconds=int(total_time)))

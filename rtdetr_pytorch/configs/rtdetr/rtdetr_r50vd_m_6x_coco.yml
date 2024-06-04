@@ -6,7 +6,7 @@ __include__: [
   './include/rtdetr_r50vd.yml',
 ]
 
-output_dir: ./output/rtdetr_r50vd_m_6x_coco
+output_dir: /content/drive/MyDrive/saves/rtdetr_r50vd_m_6x_coco
 
 
 HybridEncoder:
