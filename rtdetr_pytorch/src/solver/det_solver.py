@@ -86,7 +86,7 @@ class DetSolver(BaseSolver):
                                     self.output_dir / "eval" / name)
                             if self.output_dir:
                                 latest_checkpoint = max(self.output_dir.glob('checkpoint*.pth'), key=os.path.getctime)
-                                new_dir = '/content/drive/MyDrive/saves' + self.output_dir.split('/')[-1]
+                                new_dir = '/content/drive/MyDrive/saves/' + str(self.output_dir).split('/')[-1]
                                 shutil.copy(latest_checkpoint, new_dir)
 
         total_time = time.time() - start_time

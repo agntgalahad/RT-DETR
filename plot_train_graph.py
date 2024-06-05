@@ -2,7 +2,7 @@ import json
 
 import matplotlib.pyplot as plt
 
-log_file = 'log.txt'
+log_file = 'log (1).txt'
 loss_values = []
 
 with open(log_file, 'r') as f:
