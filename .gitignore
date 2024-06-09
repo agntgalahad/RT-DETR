@@ -167,3 +167,22 @@ cython_debug/
 *.onnx
 rtdetr_pytorch/output/*
 rtdetr_pytorch/dataset/*
+_annotations.coco.json
+200.png
+Figure_1.png
+log (1).txt
+log (2).txt
+log (3).txt
+test.json
+train_loss.png
+test3.py
+test.py
+result_analysis.py
+modified_log.txt
+log.txt
+log (6).txt
+log.txt
+log (5).txt
+log (4).txt
+log (2).txt
+.gitignore
