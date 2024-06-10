@@ -42,7 +42,7 @@ def convert_yolo_to_coco(yolo_annotations_path, yolo_images_path, coco_structure
                 with open(os.path.join(dirpath, filename), 'r') as f:
                     for line in f.readlines():
                         parts = line.strip().split()
-                        category_id = int(parts[0]) + 1  # YOLO categories are 0-based, COCO are 1-based
+                        category_id = int(parts[0])   # YOLO categories are 0-based, COCO are 1-based
                         x_center = float(parts[1]) * width
                         y_center = float(parts[2]) * height
                         bbox_width = float(parts[3]) * width
@@ -50,7 +50,7 @@ def convert_yolo_to_coco(yolo_annotations_path, yolo_images_path, coco_structure
                         x_min = x_center - bbox_width / 2
                         y_min = y_center - bbox_height / 2
 
-                        # Add annotation info to COCO structure
+                        # Add annotation info to COCO staructure
                         coco_structure["annotations"].append({
                             "id": annotation_id,
                             "image_id": image_id,
