@@ -13,7 +13,7 @@ def initialize_coco_structure():
     return {
         "images": [],
         "annotations": [],
-        "categories": [{"id": 1, "name": "pothole"}]
+        "categories": [{"id": 0, "name": "pothole"}]
     }
 
 def convert_yolo_to_coco(yolo_annotations_path, yolo_images_path, coco_structure):
